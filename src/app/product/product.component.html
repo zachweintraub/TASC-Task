@@ -1,0 +1,8 @@
+<p>{{product.name}} - {{parsePrice(product.price)}}</p>
+<div *ngIf="product.inventoryQty">
+  <select>
+    <option *ngFor="let index of inventoryQtyArray">{{index}}</option>
+  </select>
+  <button>Add to Cart</button>
+</div>
+<p *ngIf="product.inventoryQty === 0">Not currently in stock.</p>

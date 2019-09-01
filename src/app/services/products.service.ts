@@ -17,7 +17,7 @@ export class ProductsService {
       categories: [Categories.food, Categories.candy],
       isImported: false,
       isTaxExempt: true,
-      inventoryQty: 99,
+      inventoryQty: 5,
     },
     {
       id: 1,
@@ -26,7 +26,7 @@ export class ProductsService {
       categories: [Categories.electronics],
       isImported: false,
       isTaxExempt: false,
-      inventoryQty: 99,
+      inventoryQty: 5,
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ export class ProductsService {
       categories: [Categories.food],
       isImported: false,
       isTaxExempt: true,
-      inventoryQty: 99,
+      inventoryQty: 5,
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ export class ProductsService {
       categories: [Categories.food, Categories.foreignGoods],
       isImported: true,
       isTaxExempt: true,
-      inventoryQty: 99,
+      inventoryQty: 55,
     },
     {
       id: 4,
@@ -53,7 +53,7 @@ export class ProductsService {
       categories: [Categories.transportation, Categories.foreignGoods],
       isImported: true,
       isTaxExempt: false,
-      inventoryQty: 99,
+      inventoryQty: 5,
     },
     {
       id: 5,
@@ -62,7 +62,7 @@ export class ProductsService {
       categories: [Categories.food, Categories.candy, Categories.foreignGoods],
       isImported: false,
       isTaxExempt: true,
-      inventoryQty: 99,
+      inventoryQty: 5,
     },
     {
       id: 6,
@@ -71,7 +71,7 @@ export class ProductsService {
       categories: [Categories.electronics],
       isImported: false,
       isTaxExempt: false,
-      inventoryQty: 99,
+      inventoryQty: 5,
     },
     {
       id: 7,
@@ -80,7 +80,7 @@ export class ProductsService {
       categories: [Categories.food, Categories.foreignGoods],
       isImported: true,
       isTaxExempt: false,
-      inventoryQty: 99,
+      inventoryQty: 5,
     },
     {
       id: 8,
@@ -89,7 +89,7 @@ export class ProductsService {
       categories: [Categories.food],
       isImported: false,
       isTaxExempt: true,
-      inventoryQty: 99,
+      inventoryQty: 5,
     },
   ];
 
