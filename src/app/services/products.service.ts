@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product, Categories } from '../../Product';
+import { InventoryProduct, Categories } from '../InventoryProduct';
 import { of } from 'rxjs';
 
 @Injectable({
@@ -9,7 +9,7 @@ export class ProductsService {
 
   constructor() { }
 
-  products: Product[] = [
+  products: InventoryProduct[] = [
     {
       id: 0,
       name: 'Skittles (1 bag, 16 lbs.)',

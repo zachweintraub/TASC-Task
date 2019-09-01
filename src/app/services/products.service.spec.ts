@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ProductsService } from './products.service';
 
-import { Categories } from '../../Product';
+import { Categories } from '../InventoryProduct';
 
 describe('ProductServiceService', () => {
   let productService: ProductsService;
