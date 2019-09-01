@@ -44,7 +44,7 @@ export class ProductsService {
       categories: [Categories.food, Categories.foreignGoods],
       isImported: true,
       isTaxExempt: true,
-      inventoryQty: 55,
+      inventoryQty: 5,
     },
     {
       id: 4,
@@ -102,7 +102,9 @@ export class ProductsService {
   }
 
   decrementQty = (id: number, qty: number) => {
-    this.products.find(obj => obj.id === id).inventoryQty -= qty;
+    if (this.products.find(obj => obj.id === id).inventoryQty > 0) {
+      this.products.find(obj => obj.id === id).inventoryQty -= qty;
+    }
   }
 
   incrementQty = (id: number, qty: number) => {

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsService } from './services/products.service';
 import { UserCartService } from './services/user-cart.service';
-import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -14,7 +13,6 @@ import { ProductComponent } from './product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MarketplaceComponent,
     ProductsListComponent,
     CartComponent,
     CheckoutComponent,

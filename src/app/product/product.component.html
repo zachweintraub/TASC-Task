@@ -1,4 +1,5 @@
 <p>{{product.name}} - {{parsePrice(product.price)}}</p>
+<p>qty: {{product.inventoryQty}}</p>
 <div *ngIf="product.inventoryQty">
   <select>
     <option *ngFor="let index of inventoryQtyArray">{{index}}</option>

@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { InventoryProduct } from '../InventoryProduct';
-import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.css']
 })
-export class ProductsListComponent implements OnInit {
+export class ProductsListComponent implements OnChanges {
 
-  products: InventoryProduct[];
+  @Input() products: InventoryProduct[];
 
-  constructor(private productsService: ProductsService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.productsService.getProducts().subscribe(res => this.products = res);
+  ngOnChanges(changes) {
+    console.log(changes);
   }
 
 }
