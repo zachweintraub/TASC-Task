@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { IProduct, CategoriesEnum } from '../types';
+import { Product, Categories } from '../../Product';
 import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductServiceService {
+export class ProductsService {
 
   constructor() { }
 
-  products: IProduct[] = [
+  products: Product[] = [
     {
       id: 0,
       name: 'Skittles (1 bag, 16 lbs.)',
       price: 16.00,
-      categories: [CategoriesEnum.food, CategoriesEnum.candy],
+      categories: [Categories.food, Categories.candy],
       isImported: false,
       isTaxExempt: true,
       inventoryQty: 99,
@@ -23,7 +23,7 @@ export class ProductServiceService {
       id: 1,
       name: 'Walkman',
       price: 99.00,
-      categories: [CategoriesEnum.electronics],
+      categories: [Categories.electronics],
       isImported: false,
       isTaxExempt: false,
       inventoryQty: 99,
@@ -32,7 +32,7 @@ export class ProductServiceService {
       id: 2,
       name: 'Microwave Popcorn (1 bag)',
       price: 0.99,
-      categories: [CategoriesEnum.food],
+      categories: [Categories.food],
       isImported: false,
       isTaxExempt: true,
       inventoryQty: 99,
@@ -41,7 +41,7 @@ export class ProductServiceService {
       id: 3,
       name: 'Vanilla Hazlenut Coffee (Imported)',
       price: 11.00,
-      categories: [CategoriesEnum.food, CategoriesEnum.foreignGoods],
+      categories: [Categories.food, Categories.foreignGoods],
       isImported: true,
       isTaxExempt: true,
       inventoryQty: 99,
@@ -50,7 +50,7 @@ export class ProductServiceService {
       id: 4,
       name: 'Vespa (Imported)',
       price: 15001.25,
-      categories: [CategoriesEnum.transportation, CategoriesEnum.foreignGoods],
+      categories: [Categories.transportation, Categories.foreignGoods],
       isImported: true,
       isTaxExempt: false,
       inventoryQty: 99,
@@ -59,7 +59,7 @@ export class ProductServiceService {
       id: 5,
       name: 'Almond Snickers (1 crate, imported)',
       price: 75.99,
-      categories: [CategoriesEnum.food, CategoriesEnum.candy, CategoriesEnum.foreignGoods],
+      categories: [Categories.food, Categories.candy, Categories.foreignGoods],
       isImported: false,
       isTaxExempt: true,
       inventoryQty: 99,
@@ -68,7 +68,7 @@ export class ProductServiceService {
       id: 6,
       name: 'Discman',
       price: 55.00,
-      categories: [CategoriesEnum.electronics],
+      categories: [Categories.electronics],
       isImported: false,
       isTaxExempt: false,
       inventoryQty: 99,
@@ -77,7 +77,7 @@ export class ProductServiceService {
       id: 7,
       name: 'Wine (1 bottle, imported)',
       price: 10.00,
-      categories: [CategoriesEnum.food, CategoriesEnum.foreignGoods],
+      categories: [Categories.food, Categories.foreignGoods],
       isImported: true,
       isTaxExempt: false,
       inventoryQty: 99,
@@ -86,7 +86,7 @@ export class ProductServiceService {
       id: 8,
       name: 'Fair Trade Coffee (1 bag, 300 lbs.)',
       price: 997.99,
-      categories: [CategoriesEnum.food],
+      categories: [Categories.food],
       isImported: false,
       isTaxExempt: true,
       inventoryQty: 99,
@@ -97,9 +97,16 @@ export class ProductServiceService {
     return of(this.products);
   }
 
+  findProduct = (id: number) => {
+    return this.products.find(obj => obj.id === id);
+  }
+
   decrementQty = (id: number, qty: number) => {
-    const targetIndex = this.products.indexOf(this.products.find(obj => obj.id === id));
-    this.products[targetIndex].inventoryQty -= qty;
+    this.products.find(obj => obj.id === id).inventoryQty -= qty;
+  }
+
+  incrementQty = (id: number, qty: number) => {
+    this.products.find(obj => obj.id === id).inventoryQty += qty;
   }
 
 }
