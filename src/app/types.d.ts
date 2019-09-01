@@ -1,4 +1,4 @@
-export interface Product {
+export interface IProduct {
   id: number;
   name: string;
   price: number;
@@ -6,4 +6,12 @@ export interface Product {
   isImported: boolean;
   isTaxExempt: boolean;
   inventoryQty: number;
+}
+
+export enum CategoriesEnum {
+  foreignGoods = 'Foreign Goods',
+  food = 'Food',
+  candy = 'Candy',
+  transportation = 'Transportation',
+  electronics = 'Electronics',
 }
