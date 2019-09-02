@@ -19,7 +19,7 @@ export class ProductComponent implements OnChanges {
   desiredQty = 1;
 
   setDesiredQty(qty: number) {
-    this.desiredQty = qty;
+    this.desiredQty = Number(qty);
     console.log(this.desiredQty);
   }
 

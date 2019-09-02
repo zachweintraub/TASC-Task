@@ -3,13 +3,21 @@ import { UserCartService } from '../services/user-cart.service';
 import { CartProduct } from '../CartProduct';
 
 @Component({
-  selector: 'app-checkout',
-  templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class CheckoutComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   cartContent: CartProduct[];
+
+  calculateCount = (): number => {
+    let count = 0;
+    this.cartContent.forEach(item => {
+      count += item.qty;
+    });
+    return count;
+  }
 
   constructor(private cartService: UserCartService) { }
 

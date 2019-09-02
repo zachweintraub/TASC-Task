@@ -13,17 +13,11 @@ export class AppComponent implements OnInit {
 
   title = 'TASC Market';
 
-  products: InventoryProduct[];
-
   cartContent: CartProduct[];
 
-  constructor(private productsService: ProductsService, private cartService: UserCartService) {}
+  constructor(private cartService: UserCartService) {}
 
   ngOnInit() {
-    this.productsService.getProducts().subscribe(res => {
-      this.products = res;
-    });
-
     this.cartService.getCart().subscribe(res => {
       this.cartContent = res;
     });
