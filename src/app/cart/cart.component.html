@@ -1,1 +1,8 @@
 <h3>Cart</h3>
+<a routerLink="/market">Continue shopping</a>
+<div *ngFor="let product of cartContent">
+  <p>{{product.name}} - {{product.qty}}</p>
+  <button (click)="onRemoveFromCart(product.id, product.qty)">Remove</button>
+</div>
+<p *ngIf="cartContent.length < 1">Cart is currently empty</p>
+<a routerLink="/checkout">Proceed to checkout</a>

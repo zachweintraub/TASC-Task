@@ -17,31 +17,6 @@ export class AppComponent implements OnInit {
 
   cartContent: CartProduct[];
 
-  onAddToCart = (product: InventoryProduct, qty: number) => {
-    const newProduct = new CartProduct(
-      product.id,
-      product.name,
-      product.price,
-      product.isTaxExempt,
-      product.isImported,
-      qty
-    );
-
-    this.cartService.addProduct(newProduct);
-
-    this.productsService.decrementQty(product.id, qty);
-
-    console.log(this.cartContent);
-
-    console.log(this.products[1]);
-
-  }
-
-  onRemoveFromCart = (id: number, qty: number) => {
-    this.cartService.removeProduct(id);
-    this.productsService.incrementQty(id, qty);
-  }
-
   constructor(private productsService: ProductsService, private cartService: UserCartService) {}
 
   ngOnInit() {

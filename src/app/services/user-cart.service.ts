@@ -31,4 +31,8 @@ export class UserCartService {
     // use the splice method to remove the product at the found index
     this.cart.splice(targetIndex, 1);
   }
+
+  clearCart = () => {
+    this.cart = [];
+  }
 }
