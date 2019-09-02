@@ -22,7 +22,7 @@ export class ProductsService {
     {
       id: 1,
       name: 'Walkman',
-      price: 99.00,
+      price: 99.99,
       categories: [Categories.electronics],
       isImported: false,
       isTaxExempt: false,
@@ -60,7 +60,7 @@ export class ProductsService {
       name: 'Almond Snickers (1 crate, imported)',
       price: 75.99,
       categories: [Categories.food, Categories.candy, Categories.foreignGoods],
-      isImported: false,
+      isImported: true,
       isTaxExempt: true,
       inventoryQty: 5,
     },

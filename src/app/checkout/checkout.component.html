@@ -1,1 +1,13 @@
-<p>checkout works!</p>
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Price (tax incl.)</th>
+  </tr>
+  <tr *ngFor="let product of cartContent">
+    <td>{{product.name}}</td>
+    <td>{{product.qty}}</td>
+    <td>{{parsePrice(calculateProductTotal(product))}}</td>
+  </tr>
+</table>
+<h4>Grand Total: {{parsePrice(calculateGrandTotal())}}</h4>
