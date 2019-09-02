@@ -1,4 +1,10 @@
 <h3>Products List</h3>
-<div *ngFor="let product of products">
+<label for="category-filter">Filter by Category: </label>
+<select id="category-filter" (change)="setFilterCategory($event.target.value)">
+    <option value="All">All</option>
+    <option *ngFor="let category of allCategories">{{category}}</option>
+  </select>
+<div *ngFor="let product of products | categories:filterCategory">
+  <hr/>
   <app-product [product]="product" [qty]="product.inventoryQty"></app-product>
 </div>

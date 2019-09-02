@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserCartService } from '../services/user-cart.service';
 import { CartProduct } from '../CartProduct';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -50,7 +51,12 @@ export class CheckoutComponent implements OnInit {
     return `$${priceString}`;
   }
 
-  constructor(private cartService: UserCartService) { }
+  confirmPurchase = () => {
+    this.cartService.clearCart();
+    this.router.navigate(['/products']);
+  }
+
+  constructor(private cartService: UserCartService, private router: Router) { }
 
   ngOnInit() {
     this.cartService.getCart().subscribe(res => {

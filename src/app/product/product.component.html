@@ -1,9 +1,9 @@
-<p>{{product.name}}</p>
+<p ngClass="product-name">{{product.name}}</p>
 <p>{{parsePrice(product.price)}}</p>
 <div *ngIf="product.inventoryQty > 0">
   <select (change)="setDesiredQty($event.target.value)">
     <option *ngFor="let index of inventoryQtyArray">{{index}}</option>
   </select>
-  <button (click)="onAddToCart()">Add to Cart</button>
+  <button ngClass="add-button" (click)="onAddToCart()">Add to Cart</button>
 </div>
-<p *ngIf="product.inventoryQty < 1">Not currently in stock.</p>
+<p ngClass="out-of-stock" *ngIf="product.inventoryQty < 1">Not currently in stock.</p>

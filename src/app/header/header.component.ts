@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserCartService } from '../services/user-cart.service';
 import { CartProduct } from '../CartProduct';
 
@@ -7,11 +7,12 @@ import { CartProduct } from '../CartProduct';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
 
   cartContent: CartProduct[];
 
-  calculateCount = (): number => {
+  calculateCount = () => {
     let count = 0;
     this.cartContent.forEach(item => {
       count += item.qty;
@@ -26,5 +27,4 @@ export class HeaderComponent implements OnInit {
       this.cartContent = res;
     });
   }
-
 }

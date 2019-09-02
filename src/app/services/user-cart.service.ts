@@ -33,6 +33,6 @@ export class UserCartService {
   }
 
   clearCart = () => {
-    this.cart = [];
+    this.cart.length = 0;
   }
 }

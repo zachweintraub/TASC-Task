@@ -4,13 +4,12 @@
 
 .header-link {
   padding-left: 10px;
+  padding-top: 10px;
+  color: black;
   float: right;
-  color: grey;
   text-decoration: none;
-  transition: 200ms;
 }
 
 .header-link:hover {
-  color: black;
-  transition: 200ms;
+  text-decoration: underline;
 }

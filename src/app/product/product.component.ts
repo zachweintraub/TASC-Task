@@ -20,7 +20,6 @@ export class ProductComponent implements OnChanges {
 
   setDesiredQty(qty: number) {
     this.desiredQty = Number(qty);
-    console.log(this.desiredQty);
   }
 
   parsePrice = (price: number): string => {

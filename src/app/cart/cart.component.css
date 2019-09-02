@@ -1,0 +1,13 @@
+#checkout-link {
+  color: black;
+  text-decoration: none;
+}
+
+#checkout-link:hover {
+  font-weight: bold;
+  transition: 200ms;
+}
+
+#cart-content {
+  padding-bottom: 20px;
+}
