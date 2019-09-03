@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserCartService } from '../services/user-cart.service';
 import { CartProduct } from '../CartProduct';
 
@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   cartContent: CartProduct[];
 
+  // calculates the total number of products in the cart
   calculateCount = () => {
     let count = 0;
     this.cartContent.forEach(item => {
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private cartService: UserCartService) { }
 
+  // fetch the cart contents in order to calculate number of products in the cart
   ngOnInit() {
     this.cartService.getCart().subscribe(res => {
       this.cartContent = res;

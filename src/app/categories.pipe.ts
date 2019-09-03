@@ -5,7 +5,7 @@ import { InventoryProduct } from './InventoryProduct';
   name: 'categories'
 })
 export class CategoriesPipe implements PipeTransform {
-
+  // filters an array of products to include only those belonging to the given category
   transform(value: InventoryProduct[], category: string) {
     if (category === 'All') {
       return value;

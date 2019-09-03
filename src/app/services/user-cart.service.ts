@@ -9,6 +9,7 @@ export class UserCartService {
 
   constructor() { }
 
+  // array to contain all products as they are added to the cart
   cart: CartProduct[] = [];
 
   getCart = () => {
@@ -36,6 +37,7 @@ export class UserCartService {
     return this.cart.find(obj => obj.id === id);
   }
 
+  // remove all products from the cart, called upon confirmation of purchase
   clearCart = () => {
     this.cart.length = 0;
   }

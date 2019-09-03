@@ -12,14 +12,18 @@ export class CartComponent implements OnInit {
 
   cartContent: CartProduct[];
 
+  // method to call when user clicks the "remove" button
   onRemoveFromCart = (id: number, qty: number) => {
+    // remove the product from the cart
     this.cartService.removeProduct(id);
+    // adjust the inventory level of the product
     this.productsService.incrementQty(id, qty);
   }
 
   constructor(private productsService: ProductsService, private cartService: UserCartService) { }
 
   ngOnInit() {
+    // fetch cart contents to display
     this.cartService.getCart().subscribe(res => this.cartContent = res);
   }
 

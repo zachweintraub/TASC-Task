@@ -9,6 +9,7 @@ export class ProductsService {
 
   constructor() { }
 
+  // array representing all of the products in inventory
   products: InventoryProduct[] = [
     {
       id: 0,
