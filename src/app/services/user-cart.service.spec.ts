@@ -31,21 +31,27 @@ describe('UserCartService', () => {
     expect(expectedCart).toEqual(userCart);
   });
 
+  it('should clear cart successfully', () => {
+    cartService.addProduct(newProduct);
+    cartService.addProduct(newProduct);
+    cartService.clearCart();
+    expect(userCart).toEqual([]);
+  });
+
   it('should add new product to cart', () => {
     cartService.addProduct(newProduct);
     expect(userCart).toContain(newProduct);
-  });
-
-  it('should update qty of existing product in cart', () => {
-    cartService.addProduct(newProduct);
-    cartService.addProduct(newProduct);
-    const expectedQty = 2;
-    expect(expectedQty).toEqual(userCart[0].qty);
   });
 
   it('should remove products from the cart', () => {
     cartService.addProduct(newProduct);
     cartService.removeProduct(newProduct.id);
     expect(userCart.length).toEqual(0);
+  });
+
+  it('should return a single product using the find method', () => {
+    cartService.addProduct(newProduct);
+    const foundProduct = cartService.find(1);
+    expect(newProduct).toEqual(foundProduct);
   });
 });

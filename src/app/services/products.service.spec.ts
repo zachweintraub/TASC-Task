@@ -27,16 +27,16 @@ describe('ProductServiceService', () => {
         categories: [Categories.food, Categories.candy],
         isImported: false,
         isTaxExempt: true,
-        inventoryQty: 99,
+        inventoryQty: 5,
       },
       {
         id: 1,
         name: 'Walkman',
-        price: 99.00,
+        price: 99.99,
         categories: [Categories.electronics],
         isImported: false,
         isTaxExempt: false,
-        inventoryQty: 99,
+        inventoryQty: 5,
       },
       {
         id: 2,
@@ -45,7 +45,7 @@ describe('ProductServiceService', () => {
         categories: [Categories.food],
         isImported: false,
         isTaxExempt: true,
-        inventoryQty: 99,
+        inventoryQty: 5,
       },
       {
         id: 3,
@@ -54,7 +54,7 @@ describe('ProductServiceService', () => {
         categories: [Categories.food, Categories.foreignGoods],
         isImported: true,
         isTaxExempt: true,
-        inventoryQty: 99,
+        inventoryQty: 5,
       },
       {
         id: 4,
@@ -63,16 +63,16 @@ describe('ProductServiceService', () => {
         categories: [Categories.transportation, Categories.foreignGoods],
         isImported: true,
         isTaxExempt: false,
-        inventoryQty: 99,
+        inventoryQty: 5,
       },
       {
         id: 5,
         name: 'Almond Snickers (1 crate, imported)',
         price: 75.99,
         categories: [Categories.food, Categories.candy, Categories.foreignGoods],
-        isImported: false,
+        isImported: true,
         isTaxExempt: true,
-        inventoryQty: 99,
+        inventoryQty: 5,
       },
       {
         id: 6,
@@ -81,7 +81,7 @@ describe('ProductServiceService', () => {
         categories: [Categories.electronics],
         isImported: false,
         isTaxExempt: false,
-        inventoryQty: 99,
+        inventoryQty: 5,
       },
       {
         id: 7,
@@ -90,7 +90,7 @@ describe('ProductServiceService', () => {
         categories: [Categories.food, Categories.foreignGoods],
         isImported: true,
         isTaxExempt: false,
-        inventoryQty: 99,
+        inventoryQty: 5,
       },
       {
         id: 8,
@@ -99,7 +99,7 @@ describe('ProductServiceService', () => {
         categories: [Categories.food],
         isImported: false,
         isTaxExempt: true,
-        inventoryQty: 99,
+        inventoryQty: 5,
       },
     ];
     expect(expectedProducts).toEqual(fetchedProducts);
@@ -110,25 +110,25 @@ describe('ProductServiceService', () => {
     const expectedProduct = {
       id: 1,
       name: 'Walkman',
-      price: 99.00,
+      price: 99.99,
       categories: [Categories.electronics],
       isImported: false,
       isTaxExempt: false,
-      inventoryQty: 99,
+      inventoryQty: 5,
     };
     expect(expectedProduct).toEqual(foundProduct);
   });
 
   it('should properly decrement an items quantity', () => {
     productService.decrementQty(1, 1);
-    const expectedQty = 98;
+    const expectedQty = 4;
     const fetchedQty = productService.findProduct(1).inventoryQty;
     expect (expectedQty).toEqual(fetchedQty);
   });
 
   it('should properly increment an items quantity', () => {
     productService.incrementQty(1, 1);
-    const expectedQty = 100;
+    const expectedQty = 6;
     const fetchedQty = productService.findProduct(1).inventoryQty;
     expect (expectedQty).toEqual(fetchedQty);
   });

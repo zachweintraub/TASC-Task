@@ -1,5 +1,6 @@
 <p ngClass="product-name">{{product.name}}</p>
 <p>{{parsePrice(product.price)}}</p>
+<p *ngIf="cartService.find(product.id)">({{cartService.find(product.id).qty}} currently in <a id="cart-link" routerLink='/cart'>cart</a>)</p>
 <div *ngIf="product.inventoryQty > 0">
   <select (change)="setDesiredQty($event.target.value)">
     <option *ngFor="let index of inventoryQtyArray">{{index}}</option>

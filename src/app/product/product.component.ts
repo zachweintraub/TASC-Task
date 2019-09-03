@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, OnInit, Input } from '@angular/core';
 import { InventoryProduct } from '../InventoryProduct';
 import { ProductsService } from '../services/products.service';
 import { UserCartService } from '../services/user-cart.service';
@@ -9,12 +9,14 @@ import { CartProduct } from '../CartProduct';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnChanges {
+export class ProductComponent implements OnInit, OnChanges {
 
   @Input() product: InventoryProduct;
   @Input() qty: number;
 
   inventoryQtyArray: number[];
+
+  cartContent: CartProduct[];
 
   desiredQty = 1;
 
@@ -45,10 +47,15 @@ export class ProductComponent implements OnChanges {
 
   constructor(private productsService: ProductsService, private cartService: UserCartService) { }
 
+  ngOnInit() {
+    this.cartService.getCart().subscribe(res => {
+      this.cartContent = res;
+    });
+  }
+
   ngOnChanges() {
     if (this.qty > 0) {
       this.inventoryQtyArray = Array(this.qty).fill(0).map((x, i) => i + 1);
     }
   }
-
 }

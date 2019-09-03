@@ -1,3 +1,27 @@
-body {
+#main {
   padding: 10px;
+  padding-top: 60px;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+
+button {
+  color: black;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: lightgray;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+button:focus {
+  outline: none;
 }

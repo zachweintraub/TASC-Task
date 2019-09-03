@@ -1,12 +1,11 @@
-.add-button:hover {
-  font-weight: bold;
-  transition: 100ms;
-}
-
 .out-of-stock {
   color: red;
 }
 
 .product-name {
   font-weight: bold;
+}
+
+#cart-link {
+  color: black;
 }

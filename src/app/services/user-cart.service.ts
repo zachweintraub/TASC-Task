@@ -32,6 +32,10 @@ export class UserCartService {
     this.cart.splice(targetIndex, 1);
   }
 
+  find = (id: number) => {
+    return this.cart.find(obj => obj.id === id);
+  }
+
   clearCart = () => {
     this.cart.length = 0;
   }

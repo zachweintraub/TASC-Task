@@ -2,7 +2,7 @@
 <div *ngFor="let product of cartContent" id="cart-content">
   <hr/>
   <p>{{product.name}} - {{product.qty}}</p>
-  <button (click)="onRemoveFromCart(product.id, product.qty)">Remove</button>
+  <button id="remove-product" (click)="onRemoveFromCart(product.id, product.qty)">Remove</button>
 </div>
 <button *ngIf="cartContent.length > 0" id="checkout-link" routerLink="/checkout">Proceed to Checkout</button>
 <p *ngIf="cartContent.length < 1">Cart is currently empty</p>
